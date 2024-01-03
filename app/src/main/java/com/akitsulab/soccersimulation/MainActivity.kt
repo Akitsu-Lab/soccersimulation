@@ -47,47 +47,39 @@ fun MainContent(modifier: Modifier = Modifier) {
             .padding(10.dp)
             .verticalScroll(rememberScrollState())
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.icon_user),
-                contentDescription = "ユーザーアイコン",
-                modifier = Modifier
-                    .size(100.dp)
+        PlayerOverView(name = "織田 信長", position = "FW")
+        PlayerOverView(name = "豊臣 秀吉", position = "FW")
+        PlayerOverView(name = "徳川 家康", position = "FW")
+        PlayerOverView(name = "前田 利家", position = "FW")
+        PlayerOverView(name = "香川 真司", position = "MF")
+        PlayerOverView(name = "本田 圭佑", position = "MF")
+        PlayerOverView(name = "岡崎 慎二", position = "FW")
+        PlayerOverView(name = "長友 佑都", position = "DF")
+    }
+}
+
+@Composable
+fun PlayerOverView(
+    name: String,
+    position: String,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.icon_user),
+            contentDescription = "ユーザーアイコン",
+            modifier = Modifier
+                .size(100.dp)
+        )
+        Column {
+            Text(
+                text = name,
             )
             Text(
-                text = "織田信長",
-                modifier = modifier
+                text = "ポジション: $position",
             )
-        }
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.icon_user),
-                contentDescription = "ユーザーアイコン",
-                modifier = Modifier
-                    .size(100.dp)
-            )
-            Text(
-                text = "豊臣秀吉",
-                modifier = modifier
-            )
-        }
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.icon_user),
-                contentDescription = "ユーザーアイコン",
-                modifier = Modifier
-                    .size(100.dp)
-            )
-            Text(
-                text = "徳川家康",
-                modifier = modifier
-            )
+
         }
     }
 }
